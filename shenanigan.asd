@@ -1,4 +1,4 @@
-(asdf:defsystem "cl-server"
+(asdf:defsystem "shenanigan"
   :version nil
   :author nil
   :license nil
