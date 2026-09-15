@@ -20,4 +20,6 @@
 
 (defun stop-server ()
   ;; use * instead of *server* to stop every instance
-  (hunchentoot:stop *server*))
+  (when (and *server*
+			 (hunchentoot:started-p *server*))
+	(hunchentoot:stop *server*)))
