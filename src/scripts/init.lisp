@@ -8,6 +8,7 @@
 	(when (uiop:file-exists-p (funcall get-shenanigan-asd current-path))
 	  (format t "Loading .asd system file in directory ~a" current-path)
 	  (asdf:load-asd (funcall get-shenanigan-asd current-path))
+	  (asdf:load-system :shenanigan)
 	  (loop-finish))
 	(setf current-path (uiop:pathname-parent-directory-pathname current-path)))
   :finally (unless (uiop:file-exists-p (funcall get-shenanigan-asd current-path))
